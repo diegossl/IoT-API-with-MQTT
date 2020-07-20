@@ -2,6 +2,9 @@ import express from 'express'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import indexRouter from './routes/index'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
 

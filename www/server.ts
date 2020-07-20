@@ -1,12 +1,12 @@
 import app from '../app'
 import debug from 'debug'
-import http from 'http'
+import http, { Server } from 'http'
 
 const port = '3000'
 
 app.set('port', '3000')
 
-const server: http.Server = http.createServer(app)
+const server: Server = http.createServer(app)
 
 server.listen(port)
 server.on('error', onError)
