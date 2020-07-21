@@ -3,8 +3,9 @@ import Gateway from '../api/Gateway'
 
 const router: Router = express.Router()
 
-router.get('/subscriber/message/:topic', Gateway.getMessage)
-router.post('/subscriber/register', Gateway.registerSubscribed)
+router.get('/subscriber/message/:subscriberName', Gateway.getMessages)
+router.post('/register', Gateway.registerSubscribedAndTopic)
 router.post('/subscriber/delete', Gateway.removeSubscribed)
+router.post('/topic/delete', Gateway.removeTopic)
 
 export default router
