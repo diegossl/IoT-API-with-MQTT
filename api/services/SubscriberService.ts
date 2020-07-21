@@ -1,7 +1,7 @@
 import PubSubConfig from '../../config/PubSub'
 import { PubSub, Subscription } from '@google-cloud/pubsub'
 
-class PubSubService {
+class SubscriberService {
   private client: PubSub | undefined
 
   public async connect () {
@@ -20,7 +20,6 @@ class PubSubService {
     const messageHandler = (message: any) => {
       console.log(`Received message ${message.id}:`)
       console.log(`\tData: ${message.data}`)
-      console.log(`\tAttributes: ${message.attributes}`)
       messageCount += 1
 
       message.ack()
@@ -44,4 +43,4 @@ class PubSubService {
   }
 }
 
-export default new PubSubService()
+export default new SubscriberService()

@@ -2,9 +2,9 @@ import app from '../app'
 import debug from 'debug'
 import http, { Server } from 'http'
 
-const port = '3000'
+const port = '4000'
 
-app.set('port', '3000')
+app.set('port', '4000')
 
 const server: Server = http.createServer(app)
 
