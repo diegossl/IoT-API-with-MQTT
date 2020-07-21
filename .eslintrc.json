@@ -16,6 +16,7 @@
     ],
     "rules": {
       "no-unused-vars": "off",
-      "no-useless-constructor": "off"
+      "no-useless-constructor": "off",
+      "no-unused-expressions": "off"
     }
 }

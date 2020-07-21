@@ -2,26 +2,43 @@ import MqttConfig from '../../config/mqtt'
 import { MqttClient } from 'mqtt'
 
 class MqttService {
-  private client: MqttClient
+  private client: MqttClient | undefined
 
-  constructor () {
+  public constructor () {
     this.client = MqttConfig.connect()
   }
 
-  addSubscriber (topic: string | string[]) {
-    this.client.subscribe(topic)
+  private validateClient (): boolean {
+    if (this.client) {
+      return true
+    }
+    return false
   }
 
-  removeSubscriber (topic: string | string[]) {
-    this.client.unsubscribe(topic)
+  public addSubscriber (topic: string | string[]): boolean {
+    if (this.validateClient()) {
+      this.client?.subscribe(topic)
+      return true
+    }
+    return false
   }
 
-  getMessage () {
-    this.client.on('message', (topic, message) => {
-      console.log('Message received')
-      console.log(`Topic: ${topic}`)
-      console.log(`Message: ${message.toString()}`)
-    })
+  public removeSubscriber (topic: string | string[]): boolean {
+    if (this.validateClient()) {
+      this.client?.unsubscribe(topic)
+      return true
+    }
+    return false
+  }
+
+  public getMessage () {
+    if (this.validateClient()) {
+      this.client?.on('message', (topic, message) => {
+        console.log('Message received')
+        console.log(`Topic: ${topic}`)
+        console.log(`Message: ${message.toString()}`)
+      })
+    }
   }
 }
 

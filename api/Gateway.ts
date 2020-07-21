@@ -9,7 +9,6 @@ export default {
   registerSubscribed (request: Request, response: Response) {
     try {
       const topic: string | string[] = request.body.topic
-      console.log(topic)
       MqttService.addSubscriber(topic)
       return response.status(200).send('Subscriber successfully registered')
     } catch (error) {

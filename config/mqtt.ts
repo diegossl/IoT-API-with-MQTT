@@ -1,20 +1,8 @@
 import mqtt, { MqttClient } from 'mqtt'
 
-class Mqtt {
-  private static instance: Mqtt
-
-  private constructor () { }
-
-  public static getInstance (): Mqtt {
-    if (!this.instance) {
-      this.instance = new Mqtt()
-    }
-    return this.instance
-  }
-
-  public connect (): MqttClient | undefined {
+export default {
+  connect (): MqttClient | undefined {
     const urlConnection: string | undefined = process.env.MQTT_TEST
-    console.log(urlConnection)
     if (urlConnection) {
       const client: MqttClient = mqtt.connect(urlConnection)
 
@@ -31,5 +19,3 @@ class Mqtt {
     return undefined
   }
 }
-
-export default Mqtt.getInstance()
