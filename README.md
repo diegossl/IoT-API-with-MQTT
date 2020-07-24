@@ -1,32 +1,32 @@
-# API de Subscriber IoT com o Google Cloud
+# IoT Subscriber API with Google Cloud
 
-Na arquitetura de software, subscriber, faz parte do padão de projeto publish–subscribe que é um padrão de mensagens em que os remetentes de mensagens, chamados publishers, não programam as mensagens a serem enviadas diretamente para receptores específicos, chamados subscribers, mas categorizam as mensagens publicadas em classes sem o conhecimento de quais assinantes, se houver, pode ser. Da mesma forma, os assinantes manifestam interesse em uma ou mais classes e recebem apenas mensagens de seu interesse, sem o conhecimento de quais editores, se houver, existem.
+In the software architecture, the subscriber is part of the publish – subscribe project pattern, which is a message pattern in which message senders, called publishers, do not program messages to be sent directly to specific recipients, called subscribers, but categorize messages. messages published in classes without knowing which subscribers, if any, may be. Likewise, subscribers express interest in one or more classes and receive only messages of interest, without knowing which publishers, if any, exist.
 
 ## Setup
 
-Para executar o projeto, será necessário instalar as dependências digitando o seguinte comando no terminal:
+To execute the project, it will be necessary to install the dependencies by typing the following command in the terminal:
 
 ```bash
 yarn install
 ```
 
-Antes de tudo, é preciso ter as credenciais de conta de serviço para autenticação do serviço de Pub/Sub do Google Cloud por meio do painel da API no Google Cloud Platform. Em seguida é preciso colar essas credenciais, no formato JSON, dentro do arquivo **GoogleCredentials.json**, que está na raiz do projeto.
+First of all, you must have the service account credentials to authenticate the Google Cloud Pub / Sub service via the API panel on the Google Cloud Platform. Then you need to paste these credentials, in JSON format, into the file **GoogleCredentials.json**, which is at the root of the project.
 
-Por fim, para executar o projeto é preciso transpilar o código Typescript para JavaScript. Para isso digite o seguinte comando no terminal:
+Finally, to execute the project it is necessary to transpile the Typescript code to JavaScript. To do this, type the following command in the terminal:
 
 ```bash
 yarn build
 ```
 
-### Uso
+### Use
 
-Para executar o projeto já transpilado para JavaScript digite o seguinte comando no terminal:
+To execute the project already transpiled into JavaScript, type the following command in the terminal:
 
 ```bash
 yarn start
 ```
 
 
-## Licença
+## License
 
 MIT
