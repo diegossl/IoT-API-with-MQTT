@@ -12,6 +12,10 @@ yarn install
 
 First of all, you must have the service account credentials to authenticate the Google Cloud Pub / Sub service via the API panel on the Google Cloud Platform. Then you need to paste these credentials, in JSON format, into the file **GoogleCredentials.json**, which is at the root of the project.
 
+Credentials can be obtained from the following website:
+
+[https://cloud.google.com/pubsub](https://cloud.google.com/pubsub)
+
 Finally, to execute the project it is necessary to transpile the Typescript code to JavaScript. To do this, type the following command in the terminal:
 
 ```bash
@@ -25,7 +29,6 @@ To execute the project already transpiled into JavaScript, type the following co
 ```bash
 yarn start
 ```
-
 
 ## License
 
